@@ -19,6 +19,15 @@
   let selectedScent = 'fir';
   let ticking = false;
 
+  function resolveAsset(path) {
+    var base = window.VELTOR_BASE || '';
+    return base + String(path).replace(/^\//, '').replace(/^\.\//, '');
+  }
+
+  document.querySelectorAll('img[data-veltor-asset]').forEach(function (img) {
+    img.src = resolveAsset(img.getAttribute('data-veltor-asset'));
+  });
+
   /* ---- Nav ---- */
   function handleNavScroll() {
     nav.classList.toggle('nav--scrolled', window.scrollY > 24);
