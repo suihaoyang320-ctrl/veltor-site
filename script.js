@@ -52,6 +52,14 @@
   const parallaxEls = document.querySelectorAll('[data-parallax]');
 
   function updateParallax() {
+    if (window.matchMedia('(max-width: 768px)').matches) {
+      parallaxEls.forEach(function (el) {
+        el.style.transform = '';
+      });
+      ticking = false;
+      return;
+    }
+
     const scrollY = window.scrollY;
     const vh = window.innerHeight;
 
@@ -280,6 +288,7 @@
     window.addEventListener(
       'scroll',
       function () {
+        if (window.matchMedia('(max-width: 768px)').matches) return;
         const scrollY = window.scrollY;
         const heroH = hero.offsetHeight;
         if (scrollY <= heroH) {
