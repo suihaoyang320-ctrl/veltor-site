@@ -212,12 +212,12 @@
     document.querySelectorAll('.scent-btn').forEach(function (btn) {
       btn.classList.toggle('active', btn.getAttribute('data-scent') === scent);
     });
-    document.querySelectorAll('.detail-scent').forEach(function (btn) {
+    document.querySelectorAll('.detail-scent, .scent-card').forEach(function (btn) {
       btn.classList.toggle('active', btn.getAttribute('data-scent') === scent);
     });
   }
 
-  document.querySelectorAll('.scent-btn, .detail-scent').forEach(function (btn) {
+  document.querySelectorAll('.scent-btn, .detail-scent, .scent-card').forEach(function (btn) {
     btn.addEventListener('click', function () {
       setScent(btn.getAttribute('data-scent'));
     });
@@ -245,7 +245,7 @@
 
   /* ---- Section parallax (features, specs, reasons) ---- */
   const sectionParallax = document.querySelectorAll(
-    '.features, .specs, .reasons, .reviews, .faq, .cta-band, .buy'
+    '.screen--value, .screen--scents, .screen--purchase, .features, .specs, .reasons, .reviews, .faq, .cta-band, .buy'
   );
 
   function updateSectionParallax() {

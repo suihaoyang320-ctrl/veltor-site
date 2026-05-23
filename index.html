@@ -98,35 +98,103 @@
     </a>
   </section>
 
-  <!-- 产品卖点 -->
-  <section class="features" id="features">
-    <div class="features__grid">
-      <article class="feature-card reveal" data-delay="0">
-        <h3>航空铝机身</h3>
-        <p>6061 CNC 一体成型</p>
-      </article>
-      <article class="feature-card reveal" data-delay="1">
-        <h3>天然香料</h3>
-        <p>99% 植物萃取</p>
-      </article>
-      <article class="feature-card reveal" data-delay="2">
-        <h3>60 天续香</h3>
-        <p>单芯持续留香</p>
-      </article>
-      <article class="feature-card reveal" data-delay="3">
-        <h3>静音扩香</h3>
-        <p>&lt;25dB 超声雾化</p>
-      </article>
+  <!-- 第二屏 · 为什么值 ¥699 -->
+  <section class="screen screen--value" id="features">
+    <div class="screen__inner">
+      <header class="screen__head reveal">
+        <p class="screen__eyebrow">VALUE PROPOSITION</p>
+        <h2 class="screen__title">为什么值 ¥699</h2>
+        <p class="screen__lead">以奢品级工艺与材料，兑现每一分钱的价值感。</p>
+      </header>
+      <div class="screen__grid screen__grid--3">
+        <article class="value-card reveal" data-delay="0">
+          <span class="value-card__index">01</span>
+          <h3 class="value-card__title">精密工艺</h3>
+          <p class="value-card__desc">6061 航空铝 CNC 一体切削，阳极氧化黑金处理，香槟金 CNC 边框历久弥新。</p>
+        </article>
+        <article class="value-card reveal" data-delay="1">
+          <span class="value-card__index">02</span>
+          <h3 class="value-card__title">持久留香</h3>
+          <p class="value-card__desc">低功耗超声雾化芯，单支香芯约 60 天续航，附赠 3 支替换芯，首年无忧。</p>
+        </article>
+        <article class="value-card reveal" data-delay="2">
+          <span class="value-card__index">03</span>
+          <h3 class="value-card__title">静奢体验</h3>
+          <p class="value-card__desc">工作噪音低于 25dB，99% 天然植物萃取，香气均匀不侵扰驾驶专注。</p>
+        </article>
+      </div>
     </div>
-    <div class="features__stats reveal">
-      <div class="stat">
-        <span class="stat__number" data-count="60">0</span><span class="stat__unit">天</span>
+  </section>
+
+  <!-- 第三屏 · 三种香型 -->
+  <section class="screen screen--scents" id="details">
+    <div class="screen__inner">
+      <header class="screen__head reveal">
+        <p class="screen__eyebrow">SIGNATURE SCENTS</p>
+        <h2 class="screen__title">三种香型</h2>
+        <p class="screen__lead">瑞士调香师联名配方，为不同座舱气质而生。</p>
+      </header>
+      <div class="screen__grid screen__grid--3" id="detailScents">
+        <button class="scent-card detail-scent active reveal" data-scent="fir" data-delay="0" type="button">
+          <span class="scent-card__tag">Fir</span>
+          <h3 class="scent-card__name">冷杉木质</h3>
+          <p class="scent-card__note">清冽森林，沉静不扰，适合日常通勤。</p>
+        </button>
+        <button class="scent-card detail-scent reveal" data-scent="cedar" data-delay="1" type="button">
+          <span class="scent-card__tag">Cedar</span>
+          <h3 class="scent-card__name">雪松琥珀</h3>
+          <p class="scent-card__note">温暖琥珀，层次深邃，适合商务出行。</p>
+        </button>
+        <button class="scent-card detail-scent reveal" data-scent="ebony" data-delay="2" type="button">
+          <span class="scent-card__tag">Ebony</span>
+          <h3 class="scent-card__name">黑檀沉香</h3>
+          <p class="scent-card__note">东方沉香，气场内敛，适合夜间驾驶。</p>
+        </button>
       </div>
-      <div class="stat">
-        <span class="stat__number" data-count="99">0</span><span class="stat__unit">%</span>
+    </div>
+  </section>
+
+  <!-- 第四屏 · 购买区 -->
+  <section class="screen screen--purchase buy" id="buy">
+    <div class="screen__inner purchase__inner reveal">
+      <div class="purchase__visual">
+        <img
+          class="purchase__img"
+          data-veltor-asset="assets/product-hero-render.svg"
+          src="assets/product-hero-render.svg"
+          alt="VELTOR 车载香薰"
+          width="400"
+          height="520"
+        >
       </div>
-      <div class="stat">
-        <span class="stat__number" data-count="25">0</span><span class="stat__unit">dB</span>
+      <div class="purchase__content">
+        <p class="screen__eyebrow">VELTOR ONE</p>
+        <h2 class="buy__title">VELTOR 车载香薰</h2>
+        <p class="buy__price-inline"><small>¥</small>699</p>
+        <ul class="buy__trust">
+          <li>两年质保</li>
+          <li>顺丰包邮</li>
+          <li>7 天退换</li>
+          <li>官方正品</li>
+        </ul>
+        <ul class="buy__includes">
+          <li>旗舰主机 × 1</li>
+          <li>替换香芯 × 3</li>
+          <li>磁吸底座 · USB-C 线</li>
+        </ul>
+        <div class="buy__card">
+          <p class="buy__card-label">选择香型</p>
+          <div class="buy__scents" id="buyScents">
+            <button class="scent-btn active" data-scent="fir" type="button">冷杉木质</button>
+            <button class="scent-btn" data-scent="cedar" type="button">雪松琥珀</button>
+            <button class="scent-btn" data-scent="ebony" type="button">黑檀沉香</button>
+          </div>
+          <div class="buy__actions">
+            <button class="btn btn--glass btn--glass-gold js-open-purchase" id="buyNowBtn" type="button">立即购买</button>
+            <button class="btn btn--glass js-open-purchase" id="cartBtn" type="button">加入购物车</button>
+          </div>
+          <p class="buy__note">24 小时内发货 · 官方正品保障</p>
+        </div>
       </div>
     </div>
   </section>
@@ -303,71 +371,6 @@
         <h3>附赠 3 支香芯 · 航空铝礼盒</h3>
       </div>
       <a href="#buy" class="btn btn--glass btn--glass-gold js-open-purchase">¥699 立即拥有</a>
-    </div>
-  </section>
-
-  <!-- 产品详情 -->
-  <section class="details" id="details">
-    <div class="details__block reveal">
-      <h3 class="details__heading">香型</h3>
-      <div class="details__scents" id="detailScents">
-        <button class="detail-scent active" data-scent="fir" type="button">
-          <span class="detail-scent__name">冷杉木质</span>
-        </button>
-        <button class="detail-scent" data-scent="cedar" type="button">
-          <span class="detail-scent__name">雪松琥珀</span>
-        </button>
-        <button class="detail-scent" data-scent="ebony" type="button">
-          <span class="detail-scent__name">黑檀沉香</span>
-        </button>
-      </div>
-    </div>
-    <div class="details__block reveal">
-      <h3 class="details__heading">适配车型</h3>
-      <div class="details__cars">
-        <span class="car-tag">保时捷</span>
-        <span class="car-tag">奔驰</span>
-        <span class="car-tag">宝马</span>
-        <span class="car-tag">奥迪</span>
-        <span class="car-tag">特斯拉</span>
-        <span class="car-tag">蔚来</span>
-        <span class="car-tag">理想</span>
-        <span class="car-tag">更多</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- 购买区域 -->
-  <section class="buy" id="buy">
-    <div class="buy__inner reveal">
-      <div class="buy__info">
-        <h2 class="buy__title">VELTOR 车载香薰</h2>
-        <p class="buy__price-inline"><small>¥</small>699</p>
-        <ul class="buy__trust">
-          <li>两年质保</li>
-          <li>顺丰包邮</li>
-          <li>7 天退换</li>
-        </ul>
-        <ul class="buy__includes">
-          <li>旗舰主机 × 1</li>
-          <li>替换香芯 × 3</li>
-          <li>磁吸底座 · USB-C 线</li>
-        </ul>
-      </div>
-      <div class="buy__card">
-        <div class="buy__options">
-          <div class="buy__scents" id="buyScents">
-            <button class="scent-btn active" data-scent="fir" type="button">冷杉木质</button>
-            <button class="scent-btn" data-scent="cedar" type="button">雪松琥珀</button>
-            <button class="scent-btn" data-scent="ebony" type="button">黑檀沉香</button>
-          </div>
-        </div>
-        <div class="buy__actions">
-          <button class="btn btn--glass btn--glass-gold js-open-purchase" id="buyNowBtn" type="button">立即购买</button>
-          <button class="btn btn--glass js-open-purchase" id="cartBtn" type="button">加入购物车</button>
-        </div>
-        <p class="buy__note">24 小时内发货 · 官方正品保障</p>
-      </div>
     </div>
   </section>
 
