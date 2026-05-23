@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VELTOR 订单已成功创建。">
+  <title>下单成功 · VELTOR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav nav--scrolled">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">VELTOR</a>
+    </div>
+  </header>
+
+  <main class="success-page">
+    <div class="success-page__inner">
+      <div class="success-page__icon">✓</div>
+      <h1 class="success-page__title">订单已创建</h1>
+      <p class="success-page__order" id="successOrderId">订单号 VEL-000000</p>
+      <p class="success-page__delivery">
+        预计送达：<span id="successDelivery">—</span>
+      </p>
+      <div class="success-page__summary" id="successSummary">
+        <p><span>商品</span><span id="successProduct">VELTOR 车载香薰</span></p>
+        <p><span>香型</span><span id="successScent">—</span></p>
+        <p><span>数量</span><span id="successQty">—</span></p>
+        <p class="success-page__total-row"><span>合计</span><span id="successTotal">—</span></p>
+      </div>
+      <a href="index.html" class="btn btn--glass btn--glass-gold success-page__btn">继续购物</a>
+    </div>
+  </main>
+
+  <footer class="footer footer--minimal">
+    <div class="footer__bottom">
+      <p>&copy; 2026 VELTOR</p>
+    </div>
+  </footer>
+
+  <script src="success.js"></script>
+</body>
+</html>

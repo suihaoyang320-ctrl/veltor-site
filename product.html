@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VELTOR 车载香薰产品页 — ¥699 奢品级座舱香氛。">
+  <title>VELTOR 车载香薰 · 产品</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav nav--scrolled" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">VELTOR</a>
+      <nav class="nav__links">
+        <a href="index.html#showcase">产品</a>
+        <a href="index.html#reviews">评价</a>
+        <a href="index.html#faq">FAQ</a>
+        <button type="button" class="nav__cta btn btn--glass btn--glass-gold js-open-purchase">立即购买</button>
+      </nav>
+      <button class="nav__menu" id="menuBtn" aria-label="打开菜单">
+        <span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="index.html">首页</a>
+      <a href="index.html#faq">FAQ</a>
+      <button type="button" class="nav__cta-mobile js-open-purchase">立即购买 · ¥699</button>
+    </div>
+  </header>
+
+  <main class="product-page">
+    <div class="product-page__inner">
+      <div class="product-page__visual">
+        <img class="product-page__img" src="assets/product-hero.svg" alt="VELTOR 车载香薰" width="360" height="480">
+      </div>
+      <div class="product-page__info">
+        <p class="hero__tagline">车载香薰 · 旗舰系列</p>
+        <h1>VELTOR 车载香薰</h1>
+        <p class="product-page__price">¥699</p>
+        <p class="product-page__desc">
+          6061 航空铝合金机身，99% 天然香料，60 天单芯续航，低于 25dB 静音扩香。附赠 3 支替换香芯与航空铝礼盒。
+        </p>
+        <div class="product-page__actions">
+          <button type="button" class="btn btn--glass btn--glass-gold js-open-purchase">立即购买</button>
+          <button type="button" class="btn btn--glass js-open-purchase">加入购物车</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo">VELTOR</span>
+        <p class="footer__tagline">以奢品工艺，重塑座舱嗅觉。</p>
+      </div>
+      <div class="footer__links">
+        <div>
+          <a href="index.html">首页</a>
+          <a href="index.html#buy">购买</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 VELTOR</p>
+    </div>
+  </footer>
+
+  <!-- 购买弹窗 -->
+  <div class="purchase-modal" id="purchaseModal" aria-hidden="true">
+    <div class="purchase-modal__backdrop"></div>
+    <div class="purchase-modal__content">
+      <button class="purchase-modal__close" id="purchaseClose" aria-label="关闭" type="button">&times;</button>
+      <h3 class="purchase-modal__title">VELTOR 车载香薰</h3>
+      <p class="purchase-modal__price">¥699</p>
+      <div class="purchase-modal__field">
+        <span class="purchase-modal__label">香型选择</span>
+        <div class="purchase-modal__scents">
+          <button class="purchase-scent active" data-scent="fir" type="button">冷杉木质</button>
+          <button class="purchase-scent" data-scent="cedar" type="button">雪松琥珀</button>
+          <button class="purchase-scent" data-scent="ebony" type="button">黑檀沉香</button>
+        </div>
+      </div>
+      <div class="purchase-modal__field">
+        <span class="purchase-modal__label">数量</span>
+        <div class="qty-control">
+          <button class="qty-control__btn" id="qtyMinus" type="button" aria-label="减少">−</button>
+          <span class="qty-control__value" id="qtyValue">1</span>
+          <button class="qty-control__btn" id="qtyPlus" type="button" aria-label="增加">+</button>
+        </div>
+      </div>
+      <button class="btn btn--glass btn--glass-gold purchase-modal__submit" id="purchaseAddCart" type="button">加入购物车</button>
+    </div>
+  </div>
+
+  <!-- 购物车浮层 -->
+  <div class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-drawer__backdrop" id="cartDrawerBackdrop"></div>
+    <div class="cart-drawer__panel">
+      <button class="cart-drawer__close" id="cartDrawerClose" aria-label="关闭" type="button">&times;</button>
+      <div class="cart-drawer__icon">✓</div>
+      <h3 class="cart-drawer__title">已加入购物车</h3>
+      <div class="cart-drawer__item">
+        <div class="cart-drawer__row">
+          <span class="cart-drawer__label">商品</span>
+          <span class="cart-drawer__value" id="cartDrawerName">VELTOR 车载香薰</span>
+        </div>
+        <div class="cart-drawer__row">
+          <span class="cart-drawer__label">香型</span>
+          <span class="cart-drawer__value" id="cartDrawerScent">冷杉木质</span>
+        </div>
+        <div class="cart-drawer__row">
+          <span class="cart-drawer__label">数量</span>
+          <span class="cart-drawer__value" id="cartDrawerQty">1</span>
+        </div>
+        <div class="cart-drawer__row cart-drawer__row--total">
+          <span class="cart-drawer__label">总价</span>
+          <span class="cart-drawer__total" id="cartDrawerTotal">¥699</span>
+        </div>
+      </div>
+      <button class="btn btn--glass btn--glass-gold cart-drawer__checkout" id="cartCheckoutBtn" type="button">去结算</button>
+    </div>
+  </div>
+
+  <script src="cart.js"></script>
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menuBtn');
+      var mobileMenu = document.getElementById('mobileMenu');
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', function () {
+          menuBtn.classList.toggle('active');
+          mobileMenu.classList.toggle('open');
+        });
+        mobileMenu.querySelectorAll('a, button').forEach(function (el) {
+          el.addEventListener('click', function () {
+            menuBtn.classList.remove('active');
+            mobileMenu.classList.remove('open');
+          });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
