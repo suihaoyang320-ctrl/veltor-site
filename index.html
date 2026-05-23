@@ -3,6 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function (REPO) {
+      var p = location.pathname;
+      var base = (p === REPO || p.indexOf(REPO + '/') === 0)
+        ? REPO + '/'
+        : (p.indexOf('.') > -1 ? p.slice(0, p.lastIndexOf('/') + 1) : (p.endsWith('/') ? p : p + '/'));
+      var el = document.createElement('base');
+      el.href = base;
+      document.head.insertBefore(el, document.head.firstChild);
+      window.VELTOR_BASE = base;
+      window.veltorPage = function (path) { return base + String(path).replace(/^\//, ''); };
+    })('/veltor-site');
+  </script>
   <meta name="description" content="VELTOR 车载香薰 — 699元奢品级座舱香氛。">
   <title>VELTOR · 车载香薰</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,7 +75,7 @@
         <div class="hero__product-wrap" data-parallax="0.18">
           <img
             class="hero__product-img"
-            src="assets/product-hero.svg"
+            src="./assets/product-hero.svg"
             alt="VELTOR 车载香薰"
             width="546"
             height="728"
@@ -126,7 +139,7 @@
             <div class="product-story__glow"></div>
             <img
               class="product-story__device"
-              src="assets/product-hero.svg"
+              src="./assets/product-hero.svg"
               alt="VELTOR"
               width="480"
               height="640"

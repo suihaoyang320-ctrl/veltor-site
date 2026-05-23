@@ -3,6 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function (REPO) {
+      var p = location.pathname;
+      var base = (p === REPO || p.indexOf(REPO + '/') === 0)
+        ? REPO + '/'
+        : (p.indexOf('.') > -1 ? p.slice(0, p.lastIndexOf('/') + 1) : (p.endsWith('/') ? p : p + '/'));
+      var el = document.createElement('base');
+      el.href = base;
+      document.head.insertBefore(el, document.head.firstChild);
+      window.VELTOR_BASE = base;
+      window.veltorPage = function (path) { return base + String(path).replace(/^\//, ''); };
+    })('/veltor-site');
+  </script>
   <meta name="description" content="VELTOR 结账 — 安全完成您的订单。">
   <title>结账 · VELTOR</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +43,7 @@
         <section class="checkout-section">
           <h2 class="checkout-section__title">订单摘要</h2>
           <div class="checkout-summary" id="checkoutSummary">
-            <img class="checkout-summary__img" src="assets/product-hero.svg" alt="VELTOR 车载香薰" width="80" height="106">
+            <img class="checkout-summary__img" src="./assets/product-hero.svg" alt="VELTOR 车载香薰" width="80" height="106">
             <div class="checkout-summary__info">
               <p class="checkout-summary__name" id="summaryName">VELTOR 车载香薰</p>
               <p class="checkout-summary__scent" id="summaryScent">冷杉木质</p>

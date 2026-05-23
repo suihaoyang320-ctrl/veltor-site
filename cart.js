@@ -166,7 +166,7 @@
   if (cartCheckoutBtn) {
     cartCheckoutBtn.addEventListener('click', function () {
       saveCart();
-      window.location.href = 'checkout.html';
+      window.location.href = (window.veltorPage || function (p) { return p; })('checkout.html');
     });
   }
 

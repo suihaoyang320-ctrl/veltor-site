@@ -10,9 +10,13 @@
     }
   }
 
+  function pageUrl(path) {
+    return (window.veltorPage || function (p) { return p; })(path);
+  }
+
   var order = getOrder();
   if (!order) {
-    window.location.replace('index.html');
+    window.location.replace(pageUrl('index.html'));
     return;
   }
 

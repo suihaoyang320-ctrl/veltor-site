@@ -17,9 +17,13 @@
     }
   }
 
+  function pageUrl(path) {
+    return (window.veltorPage || function (p) { return p; })(path);
+  }
+
   var cart = getCart();
   if (!cart || !cart.qty) {
-    window.location.replace('index.html');
+    window.location.replace(pageUrl('index.html'));
     return;
   }
 
@@ -98,7 +102,7 @@
 
       sessionStorage.setItem('veltor_order', JSON.stringify(order));
       sessionStorage.removeItem(CART_KEY);
-      window.location.href = 'success.html';
+      window.location.href = pageUrl('success.html');
     });
   }
 })();
