@@ -285,7 +285,7 @@
 
   /* ---- Section parallax (features, specs, reasons) ---- */
   const sectionParallax = document.querySelectorAll(
-    '.screen--value, .screen--scents, .screen--purchase, .features, .specs, .reasons, .reviews, .faq, .cta-band, .buy'
+    '.screen--value, .screen--scents, .screen--reviews, .screen--story, .screen--final-buy'
   );
 
   function updateSectionParallax() {
