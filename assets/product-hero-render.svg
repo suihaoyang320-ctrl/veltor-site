@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 640" fill="none">
+  <defs>
+    <linearGradient id="obsidian" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a1e"/>
+      <stop offset="18%" stop-color="#0a0a0c"/>
+      <stop offset="42%" stop-color="#2d2d32"/>
+      <stop offset="58%" stop-color="#08080a"/>
+      <stop offset="82%" stop-color="#1f1f24"/>
+      <stop offset="100%" stop-color="#050506"/>
+    </linearGradient>
+    <linearGradient id="obsidianSide" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#030303"/>
+      <stop offset="12%" stop-color="#252528"/>
+      <stop offset="50%" stop-color="#45454c"/>
+      <stop offset="88%" stop-color="#18181c"/>
+      <stop offset="100%" stop-color="#020202"/>
+    </linearGradient>
+    <linearGradient id="champagne" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5ecd4"/>
+      <stop offset="35%" stop-color="#d4bc82"/>
+      <stop offset="65%" stop-color="#c9a962"/>
+      <stop offset="100%" stop-color="#8a7340"/>
+    </linearGradient>
+    <linearGradient id="champagneEdge" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e8d5a3"/>
+      <stop offset="50%" stop-color="#b8944f"/>
+      <stop offset="100%" stop-color="#6b5830"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="35%" stop-color="#c9a962" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.04"/>
+    </linearGradient>
+    <linearGradient id="glassSheen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.35"/>
+      <stop offset="45%" stop-color="#ffffff" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="specular" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="42%" stop-color="#ffffff" stop-opacity="0.18"/>
+      <stop offset="58%" stop-color="#ffffff" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="floorGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c9a962" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#c9a962" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ambientGold" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#c9a962" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#c9a962" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="dropShadow" x="-30%" y="-20%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="32" stdDeviation="24" flood-color="#000" flood-opacity="0.75"/>
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+    <filter id="innerGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <clipPath id="bodyClip">
+      <rect x="158" y="132" width="164" height="368" rx="14"/>
+    </clipPath>
+  </defs>
+
+  <ellipse cx="240" cy="568" rx="160" ry="36" fill="url(#floorGlow)"/>
+  <ellipse cx="240" cy="300" rx="200" ry="280" fill="url(#ambientGold)"/>
+
+  <g filter="url(#dropShadow)">
+  <!-- base -->
+  <path d="M138 478 h204 c12 0 22 10 22 22 v10 c0 10-10 18-22 18 H138 c-12 0-22-8-22-18 v-10 c0-12 10-22 22-22z" fill="#080808"/>
+  <path d="M138 478 h204 c12 0 22 10 22 22 v10 c0 10-10 18-22 18 H138 c-12 0-22-8-22-18 v-10 c0-12 10-22 22-22z" fill="url(#obsidianSide)" opacity="0.95"/>
+  <path d="M120 498 h240 c6 0 10 4 10 10 v2 c0 6-4 10-10 10 H120 c-6 0-10-4-10-10 v-2 c0-6 4-10 10-10z" fill="url(#champagne)" opacity="0.85"/>
+
+  <!-- main body shell -->
+  <rect x="152" y="128" width="176" height="376" rx="16" fill="url(#obsidian)"/>
+  <rect x="152" y="128" width="176" height="376" rx="16" stroke="url(#champagneEdge)" stroke-width="2.5"/>
+
+  <!-- side bevel -->
+  <path d="M152 144 v344 c0 8 6 14 14 14 h8 c-6-10-8-22-8-36 V144 c0-8-6-14-14-14 h-8 c6 10 8 22 8 36z" fill="#ffffff" opacity="0.04"/>
+  <path d="M328 160 v312 c0 6-4 10-10 10 h-6 c4-8 6-18 6-30 V160 c0-6 4-10 10-10 h6 c-4 8-6 18-6 30z" fill="#000" opacity="0.35"/>
+
+  <!-- frosted glass panel -->
+  <rect x="168" y="188" width="144" height="200" rx="10" fill="url(#glass)" stroke="url(#champagne)" stroke-width="0.8" stroke-opacity="0.35"/>
+  <rect x="168" y="188" width="144" height="200" rx="10" fill="url(#glassSheen)"/>
+  <rect x="178" y="198" width="28" height="160" rx="6" fill="#ffffff" opacity="0.07"/>
+  <rect x="178" y="198" width="8" height="160" rx="4" fill="#ffffff" opacity="0.14"/>
+
+  <!-- inner diffuser glow -->
+  <ellipse cx="240" cy="288" rx="52" ry="52" fill="#c9a962" opacity="0.06" filter="url(#innerGlow)"/>
+  <ellipse cx="240" cy="288" rx="36" ry="36" fill="#e8d5a3" opacity="0.08"/>
+  <ellipse cx="240" cy="288" rx="18" ry="18" fill="#c9a962" opacity="0.15"/>
+
+  <!-- specular highlight -->
+  <rect x="168" y="132" width="164" height="120" rx="14" fill="url(#specular)" clip-path="url(#bodyClip)" opacity="0.9"/>
+
+  <!-- top cap -->
+  <rect x="168" y="88" width="144" height="52" rx="10" fill="url(#obsidianSide)"/>
+  <rect x="168" y="88" width="144" height="52" rx="10" stroke="url(#champagneEdge)" stroke-width="2"/>
+  <rect x="188" y="102" width="104" height="10" rx="3" fill="url(#champagne)" opacity="0.25"/>
+  <circle cx="240" cy="114" r="5" fill="url(#champagne)"/>
+  <circle cx="240" cy="114" r="2" fill="#fff" opacity="0.6"/>
+
+  <!-- logo -->
+  <text x="240" y="340" text-anchor="middle" fill="url(#champagne)" font-family="Inter, sans-serif" font-size="13" font-weight="600" letter-spacing="5" opacity="0.85">VELTOR</text>
+  </g>
+</svg>
