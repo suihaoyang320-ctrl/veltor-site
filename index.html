@@ -163,23 +163,85 @@
       <header class="screen__head reveal">
         <p class="screen__eyebrow">SIGNATURE SCENTS</p>
         <h2 class="screen__title">三种香型</h2>
-        <p class="screen__lead">瑞士调香师联名配方，为不同座舱气质而生。</p>
+        <p class="screen__lead">为不同座舱气质而生。</p>
       </header>
       <div class="screen__grid screen__grid--3" id="detailScents">
-        <button class="scent-card detail-scent active reveal" data-scent="fir" data-delay="0" type="button">
-          <span class="scent-card__tag">Fir</span>
-          <h3 class="scent-card__name">冷杉木质</h3>
-          <p class="scent-card__note">清冽森林，沉静不扰，适合日常通勤。</p>
+        <button class="scent-card active reveal" data-scent="fir" data-delay="0" type="button" aria-pressed="true">
+          <div class="scent-card__visual" aria-hidden="true">
+            <svg viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M48 118V52L54 38H66L72 52V118H48Z" stroke="currentColor" stroke-width="0.75" stroke-linejoin="round"/>
+              <path d="M52 38V28H68V38" stroke="currentColor" stroke-width="0.75" stroke-linejoin="round"/>
+              <path d="M56 22H64" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" opacity="0.5"/>
+              <path d="M60 52V118" stroke="currentColor" stroke-width="0.5" opacity="0.25"/>
+              <path d="M60 48C54 40 50 30 48 18" stroke="currentColor" stroke-width="0.65" stroke-linecap="round" opacity="0.55"/>
+              <path d="M60 48C66 38 70 28 72 16" stroke="currentColor" stroke-width="0.65" stroke-linecap="round" opacity="0.45"/>
+              <path d="M60 52C57 46 55 40 53 34" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" opacity="0.35"/>
+              <path d="M60 52C63 46 65 40 67 34" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" opacity="0.35"/>
+              <circle cx="60" cy="14" r="1.2" fill="currentColor" opacity="0.4"/>
+              <path d="M38 124L52 112L68 118L82 106" stroke="currentColor" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
+            </svg>
+          </div>
+          <div class="scent-card__body">
+            <h3 class="scent-card__name">雪山木质</h3>
+            <p class="scent-card__accord">冷杉｜雪松｜白麝香</p>
+            <div class="scent-card__meta">
+              <p class="scent-card__row"><span class="scent-card__label">适合</span>奔驰 / 奥迪 / 沃尔沃</p>
+              <p class="scent-card__row"><span class="scent-card__label">气质</span>清冷、干净、安静</p>
+            </div>
+          </div>
+          <span class="scent-card__selected" aria-hidden="true">已选</span>
         </button>
-        <button class="scent-card detail-scent reveal" data-scent="cedar" data-delay="1" type="button">
-          <span class="scent-card__tag">Cedar</span>
-          <h3 class="scent-card__name">雪松琥珀</h3>
-          <p class="scent-card__note">温暖琥珀，层次深邃，适合商务出行。</p>
+        <button class="scent-card reveal" data-scent="cedar" data-delay="1" type="button" aria-pressed="false">
+          <div class="scent-card__visual" aria-hidden="true">
+            <svg viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M48 118V52L54 38H66L72 52V118H48Z" stroke="currentColor" stroke-width="0.75" stroke-linejoin="round"/>
+              <path d="M52 38V28H68V38" stroke="currentColor" stroke-width="0.75" stroke-linejoin="round"/>
+              <path d="M56 22H64" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" opacity="0.5"/>
+              <path d="M49 58H71" stroke="currentColor" stroke-width="0.5" opacity="0.22"/>
+              <path d="M49 68H71" stroke="currentColor" stroke-width="0.5" opacity="0.28"/>
+              <path d="M49 78H71" stroke="currentColor" stroke-width="0.5" opacity="0.34"/>
+              <path d="M49 88H71" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
+              <path d="M49 98H71" stroke="currentColor" stroke-width="0.5" opacity="0.46"/>
+              <path d="M49 108H71" stroke="currentColor" stroke-width="0.5" opacity="0.52"/>
+              <path d="M60 48C55 42 52 34 50 24" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" opacity="0.6"/>
+              <path d="M60 48C65 40 68 32 70 22" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" opacity="0.5"/>
+              <ellipse cx="60" cy="18" rx="8" ry="3" stroke="currentColor" stroke-width="0.5" opacity="0.35"/>
+            </svg>
+          </div>
+          <div class="scent-card__body">
+            <h3 class="scent-card__name">黑金皮革</h3>
+            <p class="scent-card__accord">烟草｜琥珀｜皮革</p>
+            <div class="scent-card__meta">
+              <p class="scent-card__row"><span class="scent-card__label">适合</span>保时捷 / 路虎 / 宝马</p>
+              <p class="scent-card__row"><span class="scent-card__label">气质</span>沉稳、力量、商务</p>
+            </div>
+          </div>
+          <span class="scent-card__selected" aria-hidden="true">已选</span>
         </button>
-        <button class="scent-card detail-scent reveal" data-scent="ebony" data-delay="2" type="button">
-          <span class="scent-card__tag">Ebony</span>
-          <h3 class="scent-card__name">黑檀沉香</h3>
-          <p class="scent-card__note">东方沉香，气场内敛，适合夜间驾驶。</p>
+        <button class="scent-card reveal" data-scent="ebony" data-delay="2" type="button" aria-pressed="false">
+          <div class="scent-card__visual" aria-hidden="true">
+            <svg viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M48 118V52L54 38H66L72 52V118H48Z" fill="currentColor" fill-opacity="0.08" stroke="currentColor" stroke-width="0.75" stroke-linejoin="round"/>
+              <path d="M52 38V28H68V38" stroke="currentColor" stroke-width="0.75" stroke-linejoin="round"/>
+              <path d="M56 22H64" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" opacity="0.5"/>
+              <path d="M60 50C58 44 56 38 54 32" stroke="currentColor" stroke-width="0.65" stroke-linecap="round" opacity="0.5"/>
+              <path d="M60 48C62 40 64 32 66 24" stroke="currentColor" stroke-width="0.65" stroke-linecap="round" opacity="0.45"/>
+              <path d="M58 52C52 46 48 38 46 28" stroke="currentColor" stroke-width="0.55" stroke-linecap="round" opacity="0.35"/>
+              <path d="M62 50C68 44 72 36 74 26" stroke="currentColor" stroke-width="0.55" stroke-linecap="round" opacity="0.35"/>
+              <path d="M56 56C50 62 46 72 44 84" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" opacity="0.3"/>
+              <path d="M64 54C70 60 74 70 76 82" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" opacity="0.3"/>
+              <circle cx="60" cy="16" r="1.5" fill="currentColor" opacity="0.45"/>
+            </svg>
+          </div>
+          <div class="scent-card__body">
+            <h3 class="scent-card__name">夜幕乌木</h3>
+            <p class="scent-card__accord">乌木｜檀香｜龙涎</p>
+            <div class="scent-card__meta">
+              <p class="scent-card__row"><span class="scent-card__label">适合</span>迈巴赫 / 宾利 / 雷克萨斯</p>
+              <p class="scent-card__row"><span class="scent-card__label">气质</span>深邃、奢华、私密</p>
+            </div>
+          </div>
+          <span class="scent-card__selected" aria-hidden="true">已选</span>
         </button>
       </div>
     </div>
@@ -216,9 +278,9 @@
         <div class="buy__card">
           <p class="buy__card-label">选择香型</p>
           <div class="buy__scents" id="buyScents">
-            <button class="scent-btn active" data-scent="fir" type="button">冷杉木质</button>
-            <button class="scent-btn" data-scent="cedar" type="button">雪松琥珀</button>
-            <button class="scent-btn" data-scent="ebony" type="button">黑檀沉香</button>
+            <button class="scent-btn active" data-scent="fir" type="button">雪山木质</button>
+            <button class="scent-btn" data-scent="cedar" type="button">黑金皮革</button>
+            <button class="scent-btn" data-scent="ebony" type="button">夜幕乌木</button>
           </div>
           <div class="buy__actions">
             <button class="btn btn--glass btn--glass-gold js-open-purchase" id="buyNowBtn" type="button">立即购买</button>
@@ -465,9 +527,9 @@
       <div class="purchase-modal__field">
         <span class="purchase-modal__label">香型选择</span>
         <div class="purchase-modal__scents">
-          <button class="purchase-scent active" data-scent="fir" type="button">冷杉木质</button>
-          <button class="purchase-scent" data-scent="cedar" type="button">雪松琥珀</button>
-          <button class="purchase-scent" data-scent="ebony" type="button">黑檀沉香</button>
+          <button class="purchase-scent active" data-scent="fir" type="button">雪山木质</button>
+          <button class="purchase-scent" data-scent="cedar" type="button">黑金皮革</button>
+          <button class="purchase-scent" data-scent="ebony" type="button">夜幕乌木</button>
         </div>
       </div>
       <div class="purchase-modal__field">
@@ -496,7 +558,7 @@
         </div>
         <div class="cart-drawer__row">
           <span class="cart-drawer__label">香型</span>
-          <span class="cart-drawer__value" id="cartDrawerScent">冷杉木质</span>
+          <span class="cart-drawer__value" id="cartDrawerScent">雪山木质</span>
         </div>
         <div class="cart-drawer__row">
           <span class="cart-drawer__label">数量</span>

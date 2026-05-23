@@ -11,9 +11,9 @@
   const buySection = document.getElementById('buy');
 
   const scentNames = {
-    fir: '冷杉木质',
-    cedar: '雪松琥珀',
-    ebony: '黑檀沉香',
+    fir: '雪山木质',
+    cedar: '黑金皮革',
+    ebony: '夜幕乌木',
   };
 
   let selectedScent = 'fir';
@@ -220,12 +220,14 @@
     document.querySelectorAll('.scent-btn').forEach(function (btn) {
       btn.classList.toggle('active', btn.getAttribute('data-scent') === scent);
     });
-    document.querySelectorAll('.detail-scent, .scent-card').forEach(function (btn) {
-      btn.classList.toggle('active', btn.getAttribute('data-scent') === scent);
+    document.querySelectorAll('.scent-card').forEach(function (btn) {
+      var isActive = btn.getAttribute('data-scent') === scent;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
     });
   }
 
-  document.querySelectorAll('.scent-btn, .detail-scent, .scent-card').forEach(function (btn) {
+  document.querySelectorAll('.scent-btn, .scent-card').forEach(function (btn) {
     btn.addEventListener('click', function () {
       setScent(btn.getAttribute('data-scent'));
     });

@@ -910,56 +910,181 @@ img { max-width: 100%; height: auto; display: block; }
   background:
     radial-gradient(ellipse 60% 50% at 50% 0%, rgba(201, 169, 98, 0.04) 0%, transparent 55%),
     #000;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  padding-top: calc(clamp(72px, 11vw, 120px) + 20px);
+  padding-bottom: calc(clamp(72px, 11vw, 120px) + 20px);
+}
+
+.screen--scents .screen__head {
+  margin-bottom: clamp(48px, 6vw, 72px);
+}
+
+.screen--scents .screen__lead {
+  margin-top: 12px;
+  margin-bottom: 0;
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  letter-spacing: 0.06em;
 }
 
 .scent-card {
-  display: block;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   width: 100%;
-  text-align: left;
+  min-height: 480px;
   padding: clamp(28px, 4vw, 36px) clamp(22px, 3vw, 28px);
-  background: rgba(8, 8, 8, 0.85);
-  border: 1px solid rgba(201, 169, 98, 0.12);
-  border-radius: 20px;
+  text-align: left;
+  background: rgba(10, 10, 10, 0.55);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border: 0.5px solid rgba(201, 169, 98, 0.1);
+  border-radius: 22px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    inset 0 0 40px rgba(255, 255, 255, 0.02),
+    0 20px 56px rgba(0, 0, 0, 0.4);
   cursor: pointer;
   font-family: inherit;
   color: inherit;
-  transition: border-color 0.45s var(--ease-out), box-shadow 0.45s var(--ease-out), transform 0.45s var(--ease-out);
+  overflow: hidden;
+  transition:
+    border-color 0.5s var(--ease-out),
+    transform 0.5s var(--ease-out),
+    box-shadow 0.5s var(--ease-out);
+}
+
+.scent-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.04) 0%,
+    transparent 42%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.scent-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 169, 98, 0.35), transparent);
+  opacity: 0.5;
+  transition: opacity 0.5s var(--ease-out);
 }
 
 .scent-card:hover {
-  border-color: rgba(201, 169, 98, 0.28);
-  transform: translateY(-3px);
+  border-color: rgba(201, 169, 98, 0.32);
+  transform: translateY(-6px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 28px 64px rgba(0, 0, 0, 0.5),
+    0 0 48px rgba(201, 169, 98, 0.14),
+    0 0 96px rgba(201, 169, 98, 0.06);
 }
+
+.scent-card:hover::after { opacity: 0.85; }
 
 .scent-card.active {
-  border-color: rgba(201, 169, 98, 0.45);
-  box-shadow: 0 0 40px rgba(201, 169, 98, 0.08);
+  border-color: rgba(201, 169, 98, 0.42);
   background: rgba(201, 169, 98, 0.04);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 24px 56px rgba(0, 0, 0, 0.45),
+    0 0 56px rgba(201, 169, 98, 0.12),
+    0 0 88px rgba(201, 169, 98, 0.05);
 }
 
-.scent-card__tag {
-  display: block;
-  font-size: 0.625rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+.scent-card.active::after { opacity: 1; }
+
+.scent-card__visual {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 160px;
+  margin-bottom: clamp(24px, 3vw, 32px);
   color: var(--gold);
-  opacity: 0.7;
-  margin-bottom: 14px;
+  opacity: 0.88;
+}
+
+.scent-card__visual svg {
+  width: auto;
+  height: 100%;
+  max-width: 120px;
+  display: block;
+}
+
+.scent-card__body {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .scent-card__name {
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   color: var(--white);
   margin-bottom: 10px;
 }
 
-.scent-card__note {
+.scent-card__accord {
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  color: var(--gold);
+  opacity: 0.75;
+  margin-bottom: clamp(20px, 3vw, 28px);
+}
+
+.scent-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.scent-card__row {
   font-size: 0.8125rem;
+  color: var(--gray-400);
+  line-height: 1.75;
+  letter-spacing: 0.03em;
+}
+
+.scent-card__label {
+  display: inline-block;
+  min-width: 2.5em;
+  margin-right: 6px;
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
   color: var(--gray-500);
-  line-height: 1.7;
-  letter-spacing: 0.02em;
+}
+
+.scent-card__selected {
+  position: absolute;
+  top: clamp(20px, 3vw, 24px);
+  right: clamp(20px, 3vw, 24px);
+  z-index: 2;
+  font-size: 0.5625rem;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-out);
+}
+
+.scent-card.active .scent-card__selected {
+  opacity: 0.85;
 }
 
 /* Purchase screen */
@@ -2783,6 +2908,29 @@ img { max-width: 100%; height: auto; display: block; }
   }
 
   .value-card__desc { max-width: none; }
+
+  .scent-card {
+    min-height: auto;
+    height: auto;
+    padding: 32px 24px;
+  }
+
+  .scent-card__visual {
+    height: 140px;
+    margin-bottom: 24px;
+  }
+
+  .scent-card__body {
+    align-items: center;
+    text-align: center;
+  }
+
+  .scent-card__meta { align-items: center; }
+
+  .scent-card__selected {
+    top: 20px;
+    right: 20px;
+  }
 
   .purchase__inner {
     grid-template-columns: 1fr;

@@ -5,9 +5,9 @@
   var UNIT_PRICE = 699;
 
   var SCENTS = {
-    fir: '冷杉木质',
-    cedar: '雪松琥珀',
-    ebony: '黑檀沉香',
+    fir: '雪山木质',
+    cedar: '黑金皮革',
+    ebony: '夜幕乌木',
   };
 
   var purchaseModal = document.getElementById('purchaseModal');
@@ -65,7 +65,7 @@
     if (presetScent && SCENTS[presetScent]) {
       purchaseScent = presetScent;
     } else {
-      var activePageScent = document.querySelector('.scent-btn.active, .detail-scent.active');
+      var activePageScent = document.querySelector('.scent-btn.active, .scent-card.active');
       if (activePageScent) {
         var key = activePageScent.getAttribute('data-scent');
         if (SCENTS[key]) purchaseScent = key;
