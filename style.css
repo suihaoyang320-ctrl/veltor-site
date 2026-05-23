@@ -339,13 +339,24 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .hero__value {
-  font-size: clamp(0.9375rem, 2vw, 1.125rem);
-  font-weight: 300;
-  color: var(--gray-400);
-  letter-spacing: 0.12em;
-  margin-bottom: clamp(32px, 5vh, 48px);
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  font-weight: 400;
+  color: var(--gray-300);
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
   opacity: 0;
   animation: fadeUp 1.2s var(--ease-out) 0.5s forwards;
+}
+
+.hero__intro {
+  font-size: clamp(0.8125rem, 1.8vw, 0.9375rem);
+  font-weight: 400;
+  color: var(--gray-500);
+  line-height: 1.75;
+  max-width: 24em;
+  margin-bottom: clamp(28px, 4vh, 40px);
+  opacity: 0;
+  animation: fadeUp 1.2s var(--ease-out) 0.65s forwards;
 }
 
 .hero__title-line {
@@ -366,7 +377,7 @@ img { max-width: 100%; height: auto; display: block; }
   flex-wrap: wrap;
   gap: 12px;
   opacity: 0;
-  animation: fadeUp 1.2s var(--ease-out) 0.65s forwards;
+  animation: fadeUp 1.2s var(--ease-out) 0.8s forwards;
 }
 
 .hero__visual {
@@ -1322,7 +1333,46 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: 0.75rem;
   color: var(--gray-500);
   letter-spacing: 0.05em;
+  margin-bottom: 20px;
 }
+
+.footer__meta {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer__meta-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin: 0;
+}
+
+.footer__meta dt {
+  flex-shrink: 0;
+  min-width: 2.5em;
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  color: var(--gray-500);
+  font-weight: 400;
+}
+
+.footer__meta dd {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--gray-400);
+  letter-spacing: 0.04em;
+}
+
+.footer__meta a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer__meta a:hover { color: var(--gold-light); }
 
 .footer__links { display: flex; gap: 48px; }
 .footer__links a {
@@ -2046,6 +2096,7 @@ img { max-width: 100%; height: auto; display: block; }
   .cta-band__inner { flex-direction: column; text-align: center; }
   .story-progress { display: none; }
   .footer__inner { flex-direction: column; gap: 24px; text-align: center; }
+  .footer__meta-row { justify-content: center; }
 }
 
 body.has-sticky-bar { padding-bottom: 72px; }
