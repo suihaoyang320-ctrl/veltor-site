@@ -215,21 +215,51 @@
   }
 
   /* ---- Scent sync ---- */
+  function scrollToBuy() {
+    if (!buySection) return;
+    var navH = parseInt(
+      getComputedStyle(document.documentElement).getPropertyValue('--nav-height'),
+      10
+    );
+    window.scrollTo({
+      top: buySection.getBoundingClientRect().top + window.scrollY - navH,
+      behavior: 'smooth',
+    });
+  }
+
   function setScent(scent) {
     selectedScent = scent;
     document.querySelectorAll('.scent-btn').forEach(function (btn) {
       btn.classList.toggle('active', btn.getAttribute('data-scent') === scent);
     });
-    document.querySelectorAll('.scent-card').forEach(function (btn) {
-      var isActive = btn.getAttribute('data-scent') === scent;
-      btn.classList.toggle('active', isActive);
-      btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    document.querySelectorAll('.scent-card').forEach(function (card) {
+      var isActive = card.getAttribute('data-scent') === scent;
+      card.classList.toggle('active', isActive);
+      card.setAttribute('aria-pressed', isActive ? 'true' : 'false');
     });
   }
 
-  document.querySelectorAll('.scent-btn, .scent-card').forEach(function (btn) {
+  document.querySelectorAll('.scent-btn').forEach(function (btn) {
     btn.addEventListener('click', function () {
       setScent(btn.getAttribute('data-scent'));
+    });
+  });
+
+  document.querySelectorAll('.scent-card').forEach(function (card) {
+    card.addEventListener('click', function (e) {
+      setScent(card.getAttribute('data-scent'));
+      if (e.target.closest('.scent-card__cta')) {
+        scrollToBuy();
+      }
+    });
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        setScent(card.getAttribute('data-scent'));
+        if (e.target.closest('.scent-card__cta')) {
+          scrollToBuy();
+        }
+      }
     });
   });
 

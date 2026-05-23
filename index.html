@@ -166,7 +166,8 @@
         <p class="screen__lead">为不同座舱气质而生。</p>
       </header>
       <div class="screen__grid screen__grid--3" id="detailScents">
-        <button class="scent-card active reveal" data-scent="fir" data-delay="0" type="button" aria-pressed="true">
+        <article class="scent-card active reveal" data-scent="fir" data-delay="0" tabindex="0" role="button" aria-pressed="true">
+          <span class="scent-card__badge">BEST SELLER</span>
           <div class="scent-card__visual" aria-hidden="true">
             <svg viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M48 118V52L54 38H66L72 52V118H48Z" stroke="currentColor" stroke-width="0.75" stroke-linejoin="round"/>
@@ -183,15 +184,35 @@
           </div>
           <div class="scent-card__body">
             <h3 class="scent-card__name">雪山木质</h3>
-            <p class="scent-card__accord">冷杉｜雪松｜白麝香</p>
-            <div class="scent-card__meta">
-              <p class="scent-card__row"><span class="scent-card__label">适合</span>奔驰 / 奥迪 / 沃尔沃</p>
-              <p class="scent-card__row"><span class="scent-card__label">气质</span>清冷、干净、安静</p>
+            <div class="scent-card__field">
+              <span class="scent-card__label">香调</span>
+              <p class="scent-card__value">冷杉｜雪松｜白麝香</p>
             </div>
+            <p class="scent-card__mood">像深夜驾驶穿越阿尔卑斯。</p>
+            <div class="scent-card__stats">
+              <div class="scent-card__stat">
+                <span class="scent-card__label">持续时间</span>
+                <span class="scent-card__value">≈45 天</span>
+              </div>
+              <div class="scent-card__stat">
+                <span class="scent-card__label">扩香等级</span>
+                <span class="scent-card__level" aria-label="扩香等级 4/5">
+                  <span class="is-on"></span><span class="is-on"></span><span class="is-on"></span><span class="is-on"></span><span class="is-off"></span>
+                </span>
+              </div>
+            </div>
+            <div class="scent-card__field">
+              <span class="scent-card__label">推荐车型</span>
+              <p class="scent-card__value">奔驰 S级｜奥迪 A8｜沃尔沃 XC90</p>
+            </div>
+            <div class="scent-card__field">
+              <span class="scent-card__label">气质</span>
+              <p class="scent-card__value">清冷｜干净｜安静</p>
+            </div>
+            <span class="scent-card__cta">体验此香型 →</span>
           </div>
-          <span class="scent-card__selected" aria-hidden="true">已选</span>
-        </button>
-        <button class="scent-card reveal" data-scent="cedar" data-delay="1" type="button" aria-pressed="false">
+        </article>
+        <article class="scent-card reveal" data-scent="cedar" data-delay="1" tabindex="0" role="button" aria-pressed="false">
           <div class="scent-card__visual" aria-hidden="true">
             <svg viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M48 118V52L54 38H66L72 52V118H48Z" stroke="currentColor" stroke-width="0.75" stroke-linejoin="round"/>
@@ -210,15 +231,35 @@
           </div>
           <div class="scent-card__body">
             <h3 class="scent-card__name">黑金皮革</h3>
-            <p class="scent-card__accord">烟草｜琥珀｜皮革</p>
-            <div class="scent-card__meta">
-              <p class="scent-card__row"><span class="scent-card__label">适合</span>保时捷 / 路虎 / 宝马</p>
-              <p class="scent-card__row"><span class="scent-card__label">气质</span>沉稳、力量、商务</p>
+            <div class="scent-card__field">
+              <span class="scent-card__label">香调</span>
+              <p class="scent-card__value">烟草｜琥珀｜皮革</p>
             </div>
+            <p class="scent-card__mood">高级商务车的标志性气味。</p>
+            <div class="scent-card__stats">
+              <div class="scent-card__stat">
+                <span class="scent-card__label">持续时间</span>
+                <span class="scent-card__value">≈60 天</span>
+              </div>
+              <div class="scent-card__stat">
+                <span class="scent-card__label">扩香等级</span>
+                <span class="scent-card__level" aria-label="扩香等级 5/5">
+                  <span class="is-on"></span><span class="is-on"></span><span class="is-on"></span><span class="is-on"></span><span class="is-on"></span>
+                </span>
+              </div>
+            </div>
+            <div class="scent-card__field">
+              <span class="scent-card__label">推荐车型</span>
+              <p class="scent-card__value">保时捷｜路虎｜宝马</p>
+            </div>
+            <div class="scent-card__field">
+              <span class="scent-card__label">气质</span>
+              <p class="scent-card__value">沉稳｜力量｜商务</p>
+            </div>
+            <span class="scent-card__cta">体验此香型 →</span>
           </div>
-          <span class="scent-card__selected" aria-hidden="true">已选</span>
-        </button>
-        <button class="scent-card reveal" data-scent="ebony" data-delay="2" type="button" aria-pressed="false">
+        </article>
+        <article class="scent-card reveal" data-scent="ebony" data-delay="2" tabindex="0" role="button" aria-pressed="false">
           <div class="scent-card__visual" aria-hidden="true">
             <svg viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M48 118V52L54 38H66L72 52V118H48Z" fill="currentColor" fill-opacity="0.08" stroke="currentColor" stroke-width="0.75" stroke-linejoin="round"/>
@@ -235,14 +276,34 @@
           </div>
           <div class="scent-card__body">
             <h3 class="scent-card__name">夜幕乌木</h3>
-            <p class="scent-card__accord">乌木｜檀香｜龙涎</p>
-            <div class="scent-card__meta">
-              <p class="scent-card__row"><span class="scent-card__label">适合</span>迈巴赫 / 宾利 / 雷克萨斯</p>
-              <p class="scent-card__row"><span class="scent-card__label">气质</span>深邃、奢华、私密</p>
+            <div class="scent-card__field">
+              <span class="scent-card__label">香调</span>
+              <p class="scent-card__value">乌木｜檀香｜龙涎</p>
             </div>
+            <p class="scent-card__mood">安静，却让人记住。</p>
+            <div class="scent-card__stats">
+              <div class="scent-card__stat">
+                <span class="scent-card__label">持续时间</span>
+                <span class="scent-card__value">≈50 天</span>
+              </div>
+              <div class="scent-card__stat">
+                <span class="scent-card__label">扩香等级</span>
+                <span class="scent-card__level" aria-label="扩香等级 4/5">
+                  <span class="is-on"></span><span class="is-on"></span><span class="is-on"></span><span class="is-on"></span><span class="is-off"></span>
+                </span>
+              </div>
+            </div>
+            <div class="scent-card__field">
+              <span class="scent-card__label">推荐车型</span>
+              <p class="scent-card__value">迈巴赫｜宾利｜雷克萨斯</p>
+            </div>
+            <div class="scent-card__field">
+              <span class="scent-card__label">气质</span>
+              <p class="scent-card__value">深邃｜奢华｜私密</p>
+            </div>
+            <span class="scent-card__cta">体验此香型 →</span>
           </div>
-          <span class="scent-card__selected" aria-hidden="true">已选</span>
-        </button>
+        </article>
       </div>
     </div>
   </section>
