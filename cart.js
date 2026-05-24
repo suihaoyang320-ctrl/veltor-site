@@ -1,13 +1,13 @@
 (function () {
   'use strict';
 
-  var PRODUCT_NAME = 'VELTOR 车载香薰';
+  var PRODUCT_NAME = 'VELTOR ONE';
   var UNIT_PRICE = 699;
 
   var SCENTS = {
-    fir: '雪山木质',
-    cedar: '黑金皮革',
-    ebony: '夜幕乌木',
+    fir: '黑色夜空',
+    cedar: '琥珀皮革',
+    ebony: '乌木沉境',
   };
 
   var purchaseModal = document.getElementById('purchaseModal');
@@ -65,7 +65,7 @@
     if (presetScent && SCENTS[presetScent]) {
       purchaseScent = presetScent;
     } else {
-      var activePageScent = document.querySelector('.scent-btn.active, .scent-card.active');
+      var activePageScent = document.querySelector('.scent-lg.active');
       if (activePageScent) {
         var key = activePageScent.getAttribute('data-scent');
         if (SCENTS[key]) purchaseScent = key;
