@@ -179,7 +179,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   height: auto;
   object-fit: contain;
   object-position: center;
-  filter: drop-shadow(0 28px 56px rgba(0,0,0,0.55)) drop-shadow(0 0 96px rgba(168,130,69,0.18));
+  filter: drop-shadow(0 40px 80px rgba(255,160,40,.18));
   transform: scale(1.18);
 }
 
