@@ -16,10 +16,26 @@
       window.veltorPage = function (path) { return base + String(path).replace(/^\//, ''); };
       var isGhPages = p === REPO || p.indexOf(REPO + '/') === 0;
       window.veltorProductImg = isGhPages ? 'images/car-diffuser-hero.png' : 'public/images/car-diffuser-hero.png';
+      var preload = document.createElement('link');
+      preload.rel = 'preload';
+      preload.as = 'image';
+      preload.href = (isGhPages ? REPO + '/' : base) + window.veltorProductImg;
+      document.head.appendChild(preload);
     })('/veltor-site');
   </script>
-  <meta name="description" content="VELTOR 高端车载香薰 — 为驾驶空间打造的高级车内香氛体验，¥699。">
-  <title>VELTOR · 高端车载香薰</title>
+  <meta name="description" content="VELTOR 高端车载香薰，为驾驶空间打造专属气场。">
+  <title>VELTOR｜高端车载香薰</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VELTOR">
+  <meta property="og:title" content="VELTOR｜高端车载香薰">
+  <meta property="og:description" content="VELTOR 高端车载香薰，为驾驶空间打造专属气场。">
+  <meta property="og:image" content="https://suihaoyang320-ctrl.github.io/veltor-site/images/car-diffuser-hero.png">
+  <meta property="og:url" content="https://suihaoyang320-ctrl.github.io/veltor-site/">
+  <meta property="og:locale" content="zh_CN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VELTOR｜高端车载香薰">
+  <meta name="twitter:description" content="VELTOR 高端车载香薰，为驾驶空间打造专属气场。">
+  <meta name="twitter:image" content="https://suihaoyang320-ctrl.github.io/veltor-site/images/car-diffuser-hero.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -62,6 +78,11 @@
         <p class="hero__desc anim-up" style="--d:0.4s">为驾驶空间打造高级车载香氛体验。<br>让每一次出发都有仪式感。</p>
         <div class="hero__price-block anim-up" style="--d:0.55s">
           <p class="hero__price">¥699</p>
+          <ul class="hero__trust">
+            <li>✓ 全国包邮</li>
+            <li>✓ 30天无忧退换</li>
+            <li>✓ 1年质保</li>
+          </ul>
         </div>
         <div class="hero__actions anim-up" style="--d:0.65s">
           <button class="btn btn--gold js-open-purchase" type="button">立即购买</button>
@@ -73,8 +94,13 @@
           <img
             class="hero__img"
             data-veltor-product
+            data-veltor-hero
             src="public/images/car-diffuser-hero.png"
             alt="VELTOR 高端车载香薰"
+            width="828"
+            height="460"
+            fetchpriority="high"
+            decoding="async"
           >
           <div class="hero__card-shade" aria-hidden="true"></div>
         </div>
@@ -85,19 +111,19 @@
   <!-- 2 · 价值解释 -->
   <section class="section section--promise" id="promise">
     <div class="container">
-      <h2 class="section-title reveal">不是让车变香。<br><span class="muted">而是让驾驶空间更有质感。</span></h2>
+      <h2 class="section-title reveal">不是让车变香。<br><span class="muted">是让座舱更有气质。</span></h2>
       <div class="promise-grid reveal" data-delay="1">
         <article class="promise-card promise-card--side">
-          <span class="promise-card__label">设计</span>
-          <p class="promise-card__text">航空铝与磁吸结构，克制地融入车内中控台。</p>
+          <span class="promise-card__label">金色点缀</span>
+          <p class="promise-card__text">柔光氛围，点亮座舱。</p>
         </article>
         <article class="promise-card promise-card--featured">
-          <span class="promise-card__label">气味</span>
-          <p class="promise-card__text">高级车内香氛逻辑，不刺鼻、不廉价，像原厂配置。</p>
+          <span class="promise-card__label">高级气味</span>
+          <p class="promise-card__text">克制香调，不抢视线。</p>
         </article>
         <article class="promise-card promise-card--side">
-          <span class="promise-card__label">情绪</span>
-          <p class="promise-card__text">每一次启动，车内气场都不一样。</p>
+          <span class="promise-card__label">车内摆件</span>
+          <p class="promise-card__text">自然融入中控台。</p>
         </article>
       </div>
     </div>
@@ -109,7 +135,7 @@
       <h2 class="section-title reveal">为什么值 ¥699</h2>
       <div class="worth-block reveal">
         <div class="worth-block__visual">
-          <img class="worth-block__img" data-veltor-product src="public/images/car-diffuser-hero.png" alt="VELTOR 高端车载香薰">
+          <img class="worth-block__img" data-veltor-product src="public/images/car-diffuser-hero.png" alt="VELTOR 高端车载香薰" width="480" height="360" loading="lazy" decoding="async">
         </div>
         <ul class="worth-block__list">
           <li class="reveal" data-delay="0"><span class="worth-block__num">①</span>高级玻璃机身</li>
@@ -123,7 +149,40 @@
     </div>
   </section>
 
-  <!-- 4 · 产品细节 -->
+  <!-- 4 · 细节决定气场 -->
+  <section class="section section--micro" id="micro">
+    <div class="container">
+      <h2 class="section-title reveal">细节决定气场</h2>
+      <div class="micro-grid reveal">
+        <article class="micro-card reveal" data-delay="0">
+          <span class="micro-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="6" y="8" width="16" height="14" rx="3" stroke="currentColor" stroke-width="1.2"/><path d="M10 8V6a4 4 0 0 1 8 0v2" stroke="currentColor" stroke-width="1.2"/></svg>
+          </span>
+          <h3>玻璃机身</h3>
+        </article>
+        <article class="micro-card reveal" data-delay="1">
+          <span class="micro-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="6" stroke="currentColor" stroke-width="1.2"/><path d="M14 4v3M14 21v3M4 14h3M21 14h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          </span>
+          <h3>柔和灯效</h3>
+        </article>
+        <article class="micro-card reveal" data-delay="2">
+          <span class="micro-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 6c0 0-4 4-4 9a4 4 0 0 0 8 0c0-5-4-9-4-9z" stroke="currentColor" stroke-width="1.2"/><path d="M12 22h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          </span>
+          <h3>隐藏式出香</h3>
+        </article>
+        <article class="micro-card reveal" data-delay="3">
+          <span class="micro-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="4" y="14" width="20" height="8" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M8 14V11h12v3" stroke="currentColor" stroke-width="1.2"/></svg>
+          </span>
+          <h3>中控融合设计</h3>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · 产品体验 -->
   <section class="section section--craft" id="craft">
     <div class="container">
       <h2 class="section-title reveal">每一次启动，<br>都是高级感。</h2>
@@ -153,22 +212,31 @@
         <article class="scent-lg active reveal" data-scent="fir" data-delay="0" tabindex="0" role="button" aria-pressed="true">
           <div class="scent-lg__head">
             <h3>银翼雪松</h3>
-            <p class="scent-lg__mood">冷感木质调</p>
-            <p class="scent-lg__use">适合商务驾驶</p>
+            <div class="scent-lg__meta">
+              <p><span class="scent-lg__key">适合场景</span><span class="scent-lg__val">商务驾驶</span></p>
+              <p><span class="scent-lg__key">香调</span><span class="scent-lg__val">冷感木质</span></p>
+              <p><span class="scent-lg__key">氛围感</span><span class="scent-lg__val">沉稳克制</span></p>
+            </div>
           </div>
         </article>
         <article class="scent-lg reveal" data-scent="cedar" data-delay="1" tabindex="0" role="button" aria-pressed="false">
           <div class="scent-lg__head">
             <h3>旷野橙光</h3>
-            <p class="scent-lg__mood">清爽柑橘调</p>
-            <p class="scent-lg__use">适合通勤</p>
+            <div class="scent-lg__meta">
+              <p><span class="scent-lg__key">适合场景</span><span class="scent-lg__val">日常通勤</span></p>
+              <p><span class="scent-lg__key">香调</span><span class="scent-lg__val">清爽柑橘</span></p>
+              <p><span class="scent-lg__key">氛围感</span><span class="scent-lg__val">轻盈明朗</span></p>
+            </div>
           </div>
         </article>
         <article class="scent-lg reveal" data-scent="ebony" data-delay="2" tabindex="0" role="button" aria-pressed="false">
           <div class="scent-lg__head">
             <h3>马尔木初醒</h3>
-            <p class="scent-lg__mood">沉稳木香调</p>
-            <p class="scent-lg__use">适合夜间驾驶</p>
+            <div class="scent-lg__meta">
+              <p><span class="scent-lg__key">适合场景</span><span class="scent-lg__val">夜间驾驶</span></p>
+              <p><span class="scent-lg__key">香调</span><span class="scent-lg__val">沉稳木香</span></p>
+              <p><span class="scent-lg__key">氛围感</span><span class="scent-lg__val">深邃安静</span></p>
+            </div>
           </div>
         </article>
       </div>
@@ -228,7 +296,7 @@
     <div class="container buy-grid reveal">
       <div class="buy-visual">
         <div class="buy-visual__glow" aria-hidden="true"></div>
-        <img data-veltor-product src="public/images/car-diffuser-hero.png" alt="VELTOR 高端车载香薰">
+        <img data-veltor-product src="public/images/car-diffuser-hero.png" alt="VELTOR 高端车载香薰" width="576" height="432" loading="lazy" decoding="async">
       </div>
       <div class="buy-panel">
         <h2 class="buy-headline">让你的车，<br>不只是交通工具。</h2>
@@ -241,19 +309,15 @@
 
   <footer class="footer">
     <div class="footer__row">
-      <div>
-        <span class="footer__logo">VELTOR</span>
-        <p>高端车载香薰品牌</p>
-      </div>
+      <span class="footer__logo">VELTOR</span>
       <nav class="footer__nav">
-        <a href="#worth699">产品</a>
-        <a href="#details">香型</a>
-        <a href="#reviews">评价</a>
+        <a href="https://instagram.com/veltor" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="mailto:hello@veltor.com">Email</a>
         <a href="#buy">购买</a>
       </nav>
     </div>
     <div class="footer__bottom">
-      <p class="footer__tagline">Premium Car Fragrance</p>
+      <p class="footer__tagline">Designed for refined driving.</p>
       <p>&copy; 2026 VELTOR</p>
     </div>
   </footer>

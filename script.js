@@ -23,6 +23,9 @@
 
   document.querySelectorAll('img[data-veltor-product]').forEach(function (img) {
     img.src = resolveAsset(productImgPath());
+    if (!img.hasAttribute('data-veltor-hero')) {
+      img.loading = img.getAttribute('loading') || 'lazy';
+    }
     img.addEventListener('error', function onErr() {
       img.removeEventListener('error', onErr);
       var fallback = resolveAsset('images/car-diffuser-hero.png');
