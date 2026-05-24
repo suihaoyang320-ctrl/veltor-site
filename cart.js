@@ -6,8 +6,8 @@
 
   var SCENTS = {
     fir: '黑色夜空',
-    cedar: '琥珀皮革',
-    ebony: '乌木沉境',
+    cedar: '琥珀秘境',
+    ebony: '乌木沉静',
   };
 
   var purchaseModal = document.getElementById('purchaseModal');
