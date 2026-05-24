@@ -16,6 +16,7 @@
       window.veltorPage = function (path) { return base + String(path).replace(/^\//, ''); };
       var isGhPages = p === REPO || p.indexOf(REPO + '/') === 0;
       window.veltorProductImg = isGhPages ? 'images/car-diffuser-hero.png' : 'public/images/car-diffuser-hero.png';
+      window.veltorLogoImg = isGhPages ? 'images/logo-main.png' : 'public/images/logo-main.png';
       var preload = document.createElement('link');
       preload.rel = 'preload';
       preload.as = 'image';
@@ -29,13 +30,14 @@
   <meta property="og:site_name" content="VELTOR">
   <meta property="og:title" content="VELTOR｜高端车载香薰">
   <meta property="og:description" content="VELTOR 高端车载香薰，为驾驶空间打造专属气场。">
-  <meta property="og:image" content="https://suihaoyang320-ctrl.github.io/veltor-site/images/car-diffuser-hero.png">
+  <meta property="og:image" content="https://suihaoyang320-ctrl.github.io/veltor-site/images/logo-main.png">
   <meta property="og:url" content="https://suihaoyang320-ctrl.github.io/veltor-site/">
   <meta property="og:locale" content="zh_CN">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="VELTOR｜高端车载香薰">
   <meta name="twitter:description" content="VELTOR 高端车载香薰，为驾驶空间打造专属气场。">
-  <meta name="twitter:image" content="https://suihaoyang320-ctrl.github.io/veltor-site/images/car-diffuser-hero.png">
+  <meta name="twitter:image" content="https://suihaoyang320-ctrl.github.io/veltor-site/images/logo-main.png">
+  <link rel="icon" type="image/png" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -44,7 +46,15 @@
 <body>
   <header class="nav" id="nav">
     <div class="nav__inner">
-      <a href="#" class="nav__logo anim-logo">VELTOR</a>
+      <a href="#" class="nav__logo anim-logo" aria-label="VELTOR">
+        <img
+          class="nav__logo-img"
+          data-veltor-logo
+          src="public/images/logo-main.png"
+          alt="VELTOR"
+          height="28"
+        >
+      </a>
       <nav class="nav__links">
         <a href="#worth699">产品</a>
         <a href="#details">香型</a>
@@ -308,8 +318,10 @@
   </section>
 
   <footer class="footer">
-    <div class="footer__row">
-      <span class="footer__logo">VELTOR</span>
+    <div class="footer__brand">
+      <a href="#" class="footer__logo-link" aria-label="VELTOR">
+        <img class="footer__logo-img" data-veltor-logo src="public/images/logo-main.png" alt="VELTOR">
+      </a>
       <nav class="footer__nav">
         <a href="https://instagram.com/veltor" target="_blank" rel="noopener noreferrer">Instagram</a>
         <a href="mailto:hello@veltor.com">Email</a>
@@ -317,7 +329,7 @@
       </nav>
     </div>
     <div class="footer__bottom">
-      <p class="footer__tagline">Designed for refined driving.</p>
+      <p class="footer__tagline">Designed for Refined Driving</p>
       <p>&copy; 2026 VELTOR</p>
     </div>
   </footer>
@@ -381,6 +393,7 @@
     </div>
   </div>
 
+  <script src="brand.js"></script>
   <script src="cart.js"></script>
   <script src="script.js"></script>
 </body>

@@ -16,10 +16,12 @@
       window.veltorPage = function (path) { return base + String(path).replace(/^\//, ''); };
       var isGhPages = p === REPO || p.indexOf(REPO + '/') === 0;
       window.veltorProductImg = isGhPages ? 'images/car-diffuser-hero.png' : 'public/images/car-diffuser-hero.png';
+      window.veltorLogoImg = isGhPages ? 'images/logo-main.png' : 'public/images/logo-main.png';
     })('/veltor-site');
   </script>
   <meta name="description" content="VELTOR 结账 — 安全完成您的订单。">
   <title>结账 · VELTOR</title>
+  <link rel="icon" type="image/png" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -28,7 +30,9 @@
 <body>
   <header class="nav nav--scrolled" id="nav">
     <div class="nav__inner">
-      <a href="index.html" class="nav__logo">VELTOR</a>
+      <a href="index.html" class="nav__logo" aria-label="VELTOR">
+        <img class="nav__logo-img nav__logo-img--lg" data-veltor-logo src="public/images/logo-main.png" alt="VELTOR" height="42">
+      </a>
       <nav class="nav__links">
         <a href="index.html">首页</a>
         <a href="product.html">产品</a>
@@ -138,6 +142,7 @@
     </div>
   </footer>
 
+  <script src="brand.js"></script>
   <script src="checkout.js"></script>
 </body>
 </html>

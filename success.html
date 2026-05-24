@@ -14,10 +14,13 @@
       document.head.insertBefore(el, document.head.firstChild);
       window.VELTOR_BASE = base;
       window.veltorPage = function (path) { return base + String(path).replace(/^\//, ''); };
+      var isGhPages = p === REPO || p.indexOf(REPO + '/') === 0;
+      window.veltorLogoImg = isGhPages ? 'images/logo-main.png' : 'public/images/logo-main.png';
     })('/veltor-site');
   </script>
   <meta name="description" content="VELTOR 订单已成功创建。">
   <title>下单成功 · VELTOR</title>
+  <link rel="icon" type="image/png" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -26,12 +29,16 @@
 <body>
   <header class="nav nav--scrolled">
     <div class="nav__inner">
-      <a href="index.html" class="nav__logo">VELTOR</a>
+      <a href="index.html" class="nav__logo" aria-label="VELTOR">
+        <img class="nav__logo-img nav__logo-img--lg" data-veltor-logo src="public/images/logo-main.png" alt="VELTOR" height="42">
+      </a>
     </div>
   </header>
 
   <main class="success-page">
     <div class="success-page__inner">
+      <img class="success-page__logo" data-veltor-logo src="public/images/logo-main.png" alt="VELTOR">
+      <p class="success-page__thanks">感谢选择 VELTOR</p>
       <div class="success-page__icon">✓</div>
       <h1 class="success-page__title">订单已创建</h1>
       <p class="success-page__order" id="successOrderId">订单号 VEL-000000</p>
@@ -54,6 +61,7 @@
     </div>
   </footer>
 
+  <script src="brand.js"></script>
   <script src="success.js"></script>
 </body>
 </html>
