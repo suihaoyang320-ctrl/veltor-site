@@ -55,16 +55,17 @@
   revealEls.forEach(function (el) { revealObserver.observe(el); });
 
   /* Hero mouse parallax */
-  if (heroVisual && heroProduct && window.matchMedia('(min-width: 769px)').matches) {
+  var heroImg = heroProduct ? heroProduct.querySelector('.hero__img') : null;
+  if (heroVisual && heroImg && window.matchMedia('(min-width: 769px)').matches) {
     heroVisual.addEventListener('mousemove', function (e) {
       var rect = heroVisual.getBoundingClientRect();
       var x = (e.clientX - rect.left) / rect.width - 0.5;
       var y = (e.clientY - rect.top) / rect.height - 0.5;
-      heroProduct.style.transform =
-        'translate(' + (x * 16) + 'px, ' + (y * 12) + 'px)';
+      heroImg.style.transform =
+        'scale(1.18) translate(' + (x * 12) + 'px, ' + (y * 8) + 'px)';
     });
     heroVisual.addEventListener('mouseleave', function () {
-      heroProduct.style.transform = '';
+      heroImg.style.transform = 'scale(1.18)';
     });
   }
 

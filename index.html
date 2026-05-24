@@ -56,11 +56,9 @@
       <div class="hero__copy">
         <p class="eyebrow anim-up" style="--d:0.1s">VELTOR ONE</p>
         <h1 class="hero__headline anim-up" style="--d:0.2s">不是香薰。</h1>
-        <p class="hero__sub anim-up" style="--d:0.3s">是进入车辆后的第一感觉。</p>
+        <p class="hero__sub anim-up" style="--d:0.3s">是空间氛围装置。</p>
         <ul class="hero__features anim-up" style="--d:0.45s">
-          <li>法国调香</li>
-          <li>持续 90 天释放</li>
-          <li>航空级扩香系统</li>
+          <li>火焰光效｜扩香系统｜空间设计</li>
         </ul>
         <div class="hero__price-block anim-up" style="--d:0.55s">
           <p class="hero__price">¥699</p>
@@ -76,11 +74,10 @@
         <div class="hero__product" id="heroProduct">
           <img
             class="hero__img"
-            data-veltor-asset="assets/product-hero-render.svg"
-            src="assets/product-hero-render.svg"
-            alt="VELTOR ONE"
-            width="560"
-            height="728"
+            src="images/hero-product.webp"
+            alt="VELTOR ONE 空间氛围装置"
+            width="1024"
+            height="593"
             fetchpriority="high"
           >
         </div>
@@ -93,15 +90,15 @@
     <div class="container">
       <h2 class="section-title reveal">不是让车变香。<br><span class="muted">而是让人愿意坐进来。</span></h2>
       <div class="promise-grid reveal" data-delay="1">
-        <article class="promise-card">
-          <span class="promise-card__label">气味</span>
-          <p class="promise-card__text">法国调香逻辑，不刺鼻、不廉价，像原厂配置。</p>
-        </article>
-        <article class="promise-card">
+        <article class="promise-card promise-card--side">
           <span class="promise-card__label">设计</span>
           <p class="promise-card__text">航空铝与磁吸结构，克制地融入座舱。</p>
         </article>
-        <article class="promise-card">
+        <article class="promise-card promise-card--featured">
+          <span class="promise-card__label">气味</span>
+          <p class="promise-card__text">法国调香逻辑，不刺鼻、不廉价，像原厂配置。</p>
+        </article>
+        <article class="promise-card promise-card--side">
           <span class="promise-card__label">情绪</span>
           <p class="promise-card__text">进入车内，第一秒就被认真对待。</p>
         </article>
@@ -113,33 +110,21 @@
   <section class="section section--worth" id="worth699">
     <div class="container">
       <h2 class="section-title reveal">为什么值 ¥699</h2>
-      <div class="worth-stage reveal">
-        <div class="worth-explode" aria-hidden="true">
-          <svg viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="160" cy="160" r="120" stroke="currentColor" stroke-width="0.5" opacity="0.15"/>
-            <rect x="130" y="80" width="60" height="140" rx="4" stroke="currentColor" stroke-width="0.75"/>
-            <rect x="118" y="68" width="84" height="18" rx="2" stroke="currentColor" stroke-width="0.75" opacity="0.7"/>
-            <circle cx="160" cy="140" r="22" stroke="currentColor" stroke-width="0.75" opacity="0.5"/>
-            <path d="M90 200L130 170M230 200L190 170M160 220V260" stroke="currentColor" stroke-width="0.75" opacity="0.45"/>
-            <ellipse cx="160" cy="160" rx="140" ry="40" stroke="currentColor" stroke-width="0.5" opacity="0.2" transform="rotate(-12 160 160)"/>
-          </svg>
-          <img class="worth-explode__product" data-veltor-asset="assets/product-hero-render.svg" src="assets/product-hero-render.svg" alt="" width="200" height="260">
+      <div class="worth-chain reveal">
+        <div class="worth-chain__visual">
+          <div class="worth-chain__glow" aria-hidden="true"></div>
+          <img class="worth-chain__product" data-veltor-asset="assets/product-hero-render.svg" src="assets/product-hero-render.svg" alt="VELTOR ONE" width="300" height="390">
         </div>
-        <ul class="worth-pillars">
-          <li class="reveal" data-delay="0">法国香料实验室</li>
-          <li class="reveal" data-delay="1">航空铝合金</li>
-          <li class="reveal" data-delay="2">磁吸扩香系统</li>
-          <li class="reveal" data-delay="3">90 天持续释放</li>
-        </ul>
-      </div>
-      <div class="worth-cost reveal">
-        <p class="worth-cost__title">成本拆解</p>
-        <ul class="worth-cost__list">
-          <li><span>调香</span><span>￥220</span></li>
-          <li><span>机身</span><span>￥180</span></li>
-          <li><span>系统</span><span>￥160</span></li>
-          <li><span>包装</span><span>￥139</span></li>
-        </ul>
+        <ol class="worth-chain__steps">
+          <li class="reveal" data-delay="0"><span>法国调香</span></li>
+          <li class="worth-chain__arrow" aria-hidden="true">↓</li>
+          <li class="reveal" data-delay="1"><span>阳极铝机身</span></li>
+          <li class="worth-chain__arrow" aria-hidden="true">↓</li>
+          <li class="reveal" data-delay="2"><span>磁吸扩香结构</span></li>
+          <li class="worth-chain__arrow" aria-hidden="true">↓</li>
+          <li class="reveal" data-delay="3"><span>90天持续释放</span></li>
+        </ol>
+        <p class="worth-chain__note reveal">调香 · 机身 · 系统 · 包装——每一处投入，共同构成 ¥699 的完整价值。</p>
       </div>
     </div>
   </section>
@@ -182,6 +167,7 @@
       <div class="scent-stack" id="detailScents">
         <article class="scent-lg active reveal" data-scent="fir" data-delay="0" tabindex="0" role="button" aria-pressed="true">
           <div class="scent-lg__head">
+            <span class="scent-lg__badge">销量冠军</span>
             <h3>黑色夜空</h3>
             <p class="scent-lg__mood">像凌晨两点驶过高架。</p>
           </div>
@@ -194,7 +180,8 @@
         </article>
         <article class="scent-lg reveal" data-scent="cedar" data-delay="1" tabindex="0" role="button" aria-pressed="false">
           <div class="scent-lg__head">
-            <h3>琥珀皮革</h3>
+            <span class="scent-lg__badge scent-lg__badge--biz">商务推荐</span>
+            <h3>琥珀秘境</h3>
             <p class="scent-lg__mood">高级商务车的标志性气味。</p>
           </div>
           <div class="scent-lg__notes">
@@ -206,7 +193,8 @@
         </article>
         <article class="scent-lg reveal" data-scent="ebony" data-delay="2" tabindex="0" role="button" aria-pressed="false">
           <div class="scent-lg__head">
-            <h3>乌木沉境</h3>
+            <span class="scent-lg__badge scent-lg__badge--lux">豪华推荐</span>
+            <h3>乌木沉静</h3>
             <p class="scent-lg__mood">安静，却让人记住。</p>
           </div>
           <div class="scent-lg__notes">
@@ -225,11 +213,11 @@
     <div class="container">
       <h2 class="section-title reveal">属于这些座舱</h2>
       <div class="cars-track reveal">
-        <article class="car-chip">URUS</article>
-        <article class="car-chip">911</article>
-        <article class="car-chip">GLE</article>
-        <article class="car-chip">Model X</article>
-        <article class="car-chip">埃尔法</article>
+        <article class="car-cabin">URUS</article>
+        <article class="car-cabin">911</article>
+        <article class="car-cabin">GLE</article>
+        <article class="car-cabin">Model X</article>
+        <article class="car-cabin">埃尔法</article>
       </div>
     </div>
   </section>
@@ -242,20 +230,23 @@
       <div class="review-forum">
         <article class="forum-card reveal" data-delay="0">
           <div class="forum-card__stars">★★★★★</div>
-          <p class="forum-card__meta"><span>上海</span><span>宝马 740</span></p>
-          <blockquote>第一次觉得车里有高级酒店的感觉。</blockquote>
+          <p class="forum-card__city">深圳</p>
+          <p class="forum-card__car">保时捷 911</p>
+          <blockquote>第一次有人问我用了什么香。</blockquote>
           <footer>—— 已验证购买</footer>
         </article>
         <article class="forum-card reveal" data-delay="1">
           <div class="forum-card__stars">★★★★★</div>
-          <p class="forum-card__meta"><span>深圳</span><span>保时捷 Cayenne</span></p>
-          <blockquote>没有廉价香味，像原厂配置。</blockquote>
+          <p class="forum-card__city">杭州</p>
+          <p class="forum-card__car">奔驰 GLE</p>
+          <blockquote>不是浓香，是很干净的高级感。</blockquote>
           <footer>—— 已验证购买</footer>
         </article>
         <article class="forum-card reveal" data-delay="2">
           <div class="forum-card__stars">★★★★★</div>
-          <p class="forum-card__meta"><span>北京</span><span>奔驰 GLS</span></p>
-          <blockquote>朋友上车第一句话就在问在哪里买。</blockquote>
+          <p class="forum-card__city">上海</p>
+          <p class="forum-card__car">Model X</p>
+          <blockquote>上车那一刻，空间感完全不一样。</blockquote>
           <footer>—— 已验证购买</footer>
         </article>
       </div>
@@ -278,6 +269,7 @@
   <section class="section section--buy" id="buy">
     <div class="container buy-grid reveal">
       <div class="buy-visual">
+        <div class="buy-visual__glow" aria-hidden="true"></div>
         <img data-veltor-asset="assets/product-hero-render.svg" src="assets/product-hero-render.svg" alt="VELTOR ONE" width="480" height="624">
       </div>
       <div class="buy-panel">
@@ -285,10 +277,11 @@
         <p class="buy-price">¥699</p>
         <ul class="buy-trust">
           <li>✓ 全国包邮</li>
-          <li>✓ 30 天退换</li>
+          <li>✓ 30天退换</li>
           <li>✓ 一年质保</li>
+          <li>✓ 次日发货</li>
         </ul>
-        <button class="btn btn--gold btn--lg js-open-purchase" id="buyNowBtn" type="button">立即拥有</button>
+        <button class="btn btn--gold btn--buy js-open-purchase" id="buyNowBtn" type="button">立即拥有</button>
       </div>
     </div>
   </section>
@@ -327,8 +320,8 @@
         <span class="purchase-modal__label">香型选择</span>
         <div class="purchase-modal__scents">
           <button class="purchase-scent active" data-scent="fir" type="button">黑色夜空</button>
-          <button class="purchase-scent" data-scent="cedar" type="button">琥珀皮革</button>
-          <button class="purchase-scent" data-scent="ebony" type="button">乌木沉境</button>
+          <button class="purchase-scent" data-scent="cedar" type="button">琥珀秘境</button>
+          <button class="purchase-scent" data-scent="ebony" type="button">乌木沉静</button>
         </div>
       </div>
       <div class="purchase-modal__field">
