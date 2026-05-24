@@ -14,6 +14,8 @@
       document.head.insertBefore(el, document.head.firstChild);
       window.VELTOR_BASE = base;
       window.veltorPage = function (path) { return base + String(path).replace(/^\//, ''); };
+      var isGhPages = p === REPO || p.indexOf(REPO + '/') === 0;
+      window.veltorProductImg = isGhPages ? 'images/car-diffuser-hero.png' : 'public/images/car-diffuser-hero.png';
     })('/veltor-site');
   </script>
   <meta name="description" content="VELTOR 结账 — 安全完成您的订单。">
@@ -43,10 +45,10 @@
         <section class="checkout-section">
           <h2 class="checkout-section__title">订单摘要</h2>
           <div class="checkout-summary" id="checkoutSummary">
-            <img class="checkout-summary__img" src="./assets/product-hero.svg" alt="VELTOR 车载香薰" width="80" height="106">
+            <img class="checkout-summary__img" data-veltor-product src="public/images/car-diffuser-hero.png" alt="VELTOR 高端车载香薰" width="80" height="106">
             <div class="checkout-summary__info">
               <p class="checkout-summary__name" id="summaryName">VELTOR 车载香薰</p>
-              <p class="checkout-summary__scent" id="summaryScent">黑色夜空</p>
+              <p class="checkout-summary__scent" id="summaryScent">银翼雪松</p>
               <p class="checkout-summary__qty">数量：<span id="summaryQty">1</span></p>
             </div>
             <p class="checkout-summary__total" id="summaryTotal">¥699</p>
@@ -125,7 +127,7 @@
         </section>
 
         <!-- ⑤ 提交订单 -->
-        <button type="submit" class="btn btn--glass btn--glass-gold checkout-submit" id="submitOrder">提交订单 · <span id="submitTotal">¥699</span></button>
+        <button type="submit" class="btn btn--gold checkout-submit" id="submitOrder">提交订单 · <span id="submitTotal">¥699</span></button>
       </form>
     </div>
   </main>

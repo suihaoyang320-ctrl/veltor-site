@@ -1,13 +1,13 @@
 (function () {
   'use strict';
 
-  var PRODUCT_NAME = 'VELTOR ONE';
+  var PRODUCT_NAME = 'VELTOR 车载香薰';
   var UNIT_PRICE = 699;
 
   var SCENTS = {
-    fir: '黑色夜空',
-    cedar: '琥珀秘境',
-    ebony: '乌木沉静',
+    fir: '银翼雪松',
+    cedar: '旷野橙光',
+    ebony: '马尔木初醒',
   };
 
   var purchaseModal = document.getElementById('purchaseModal');

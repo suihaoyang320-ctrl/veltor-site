@@ -13,8 +13,21 @@
     return base + String(path).replace(/^\//, '').replace(/^\.\//, '');
   }
 
-  document.querySelectorAll('img[data-veltor-asset]').forEach(function (img) {
-    img.src = resolveAsset(img.getAttribute('data-veltor-asset'));
+  function productImgPath() {
+    if (window.veltorProductImg) return window.veltorProductImg;
+    var p = location.pathname;
+    var repo = '/veltor-site';
+    var isGhPages = p === repo || p.indexOf(repo + '/') === 0;
+    return isGhPages ? 'images/car-diffuser-hero.png' : 'public/images/car-diffuser-hero.png';
+  }
+
+  document.querySelectorAll('img[data-veltor-product]').forEach(function (img) {
+    img.src = resolveAsset(productImgPath());
+    img.addEventListener('error', function onErr() {
+      img.removeEventListener('error', onErr);
+      var fallback = resolveAsset('images/car-diffuser-hero.png');
+      if (img.src !== fallback) img.src = fallback;
+    });
   });
 
   /* Nav scroll */
@@ -54,20 +67,7 @@
   );
   revealEls.forEach(function (el) { revealObserver.observe(el); });
 
-  /* Hero mouse parallax */
-  var heroImg = heroProduct ? heroProduct.querySelector('.hero__img') : null;
-  if (heroVisual && heroImg && window.matchMedia('(min-width: 769px)').matches) {
-    heroVisual.addEventListener('mousemove', function (e) {
-      var rect = heroVisual.getBoundingClientRect();
-      var x = (e.clientX - rect.left) / rect.width - 0.5;
-      var y = (e.clientY - rect.top) / rect.height - 0.5;
-      heroImg.style.transform =
-        'scale(1.18) translate(' + (x * 12) + 'px, ' + (y * 8) + 'px)';
-    });
-    heroVisual.addEventListener('mouseleave', function () {
-      heroImg.style.transform = 'scale(1.18)';
-    });
-  }
+  /* Hero mouse parallax — disabled to preserve float animation */
 
   /* Scent selection */
   function scrollToBuy() {

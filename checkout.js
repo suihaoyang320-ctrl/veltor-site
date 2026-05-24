@@ -21,6 +21,27 @@
     return (window.veltorPage || function (p) { return p; })(path);
   }
 
+  function pageUrl(path) {
+    return (window.veltorPage || function (p) { return p; })(path);
+  }
+
+  function resolveAsset(path) {
+    var base = window.VELTOR_BASE || '';
+    return base + String(path).replace(/^\//, '').replace(/^\.\//, '');
+  }
+
+  function productImgPath() {
+    if (window.veltorProductImg) return window.veltorProductImg;
+    var p = location.pathname;
+    var repo = '/veltor-site';
+    var isGhPages = p === repo || p.indexOf(repo + '/') === 0;
+    return isGhPages ? 'images/car-diffuser-hero.png' : 'public/images/car-diffuser-hero.png';
+  }
+
+  document.querySelectorAll('img[data-veltor-product]').forEach(function (img) {
+    img.src = resolveAsset(productImgPath());
+  });
+
   var cart = getCart();
   if (!cart || !cart.qty) {
     window.location.replace(pageUrl('index.html'));
